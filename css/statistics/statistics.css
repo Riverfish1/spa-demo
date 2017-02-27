@@ -1,0 +1,301 @@
+/* side bar navigation */
+
+.nav-sidebar a {
+    cursor: pointer;
+    outline: 0;
+}
+
+.nav-sidebar .nav-icon {
+    position: absolute;
+    right: 10px;
+    top: 13px;
+    color: #0F3652;
+
+    display: inline;
+    width: auto;
+    height: auto;
+    line-height: normal;
+    vertical-align: baseline;
+    background-image: none;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+    margin-top: 0;
+
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    -webkit-font-smoothing: antialiased;
+}
+
+.nav-sidebar .nav-icon:before {
+    text-decoration: inherit;
+    display: inline-block;
+    speak: none;
+}
+
+.nav-sidebar > li .nav-icon:before {
+    content: "\f053";
+}
+
+.nav-sidebar > li.open .nav-icon:before {
+    content: "\f078";
+}
+
+.nav-sub {
+    display: none;
+}
+
+.nav-sub a {
+    padding-left:30px!important;
+}
+
+.nav-sidebar > li .nav-sub .nav-icon:before {
+    content: "";
+}
+
+.nav-sidebar > li.open .nav-sub .nav-icon:before {
+    content: "";
+}
+
+.nav-sidebar > li.open .nav-sub .active .nav-icon:before {
+    content: "\f0c9";
+}
+
+/* Common style */
+.inline-block {
+    display: inline-block;
+}
+
+.gap10 {
+    display: block;
+    height: 10px;
+}
+
+.panel-heading {
+    font-weight: bold;
+}
+
+.w10pt {
+    width: 10%;
+}
+
+.w20pt {
+    width: 20%;
+}
+
+.w30pt {
+    width: 30%;
+}
+
+.w40pt {
+    width: 40%;
+}
+
+.w70pt {
+    width: 70%;
+}
+
+.w25pt {
+    width: 25%;
+}
+
+/* layout */
+
+.l-search {
+    padding: 10px 20px;
+}
+
+.l-search-text {
+    font-size: 10pt;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.l-search-action {
+    margin-top: 20px;
+    font-size: 9pt;
+}
+
+.l-search-action-title{
+    display: inline-block;
+    width: 100px;
+}
+
+.l-detail {
+    padding: 5px 20px;
+}
+
+.l-detail .title, .l-search .title {
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+.l-table th, .l-table td {
+    text-align: center;
+}
+
+.l-charts {
+    width: 90%;
+    height: 300px;
+    line-height: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.l-charts .text {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+.l-charts-action {
+    text-align: center;
+    font-size: 9pt;
+    display: none;
+}
+
+/* for description */
+
+.popover {
+    max-width: 500px;
+    border-radius: 6px
+}
+
+.l-description {
+    font-size: 10pt;
+}
+
+.l-description .title{
+    color:#337ab7;
+    font-weight: bold;
+}
+
+.l-description .row-gap{
+    padding: 2px 0;
+}
+
+/* for overview module */
+.overview-detail {
+    height: 200px;
+}
+
+.overview-action {
+    margin-top: 20px;
+    font-size: 9pt;
+}
+
+.overview-bottom {
+    margin-top: 40px;
+}
+
+.overview-region-chart {
+    height: 423px;
+    line-height: 423px;
+}
+
+.overview-video-detail {
+    padding-left:0;
+    padding-right: 0;
+}
+
+/* for territory analysis */
+
+.t-chart {
+    line-height: normal;
+    overflow-y: auto;
+}
+
+.t-inland-chart {
+    height: 290px;
+    line-height: 290px;
+    display: inline-block;
+}
+
+.t-inland-chart.map {
+    width: 350px;
+}
+
+.t-inland-chart.pip {
+    width: 400px
+}
+
+.t-national-chart {
+    width: 600px;
+    height: 400px;
+    line-height: 400px;
+}
+
+.n-cdn-chart {
+    width: 350px;
+}
+
+.n-b-chart, .content-chart, .user-f-chart, .user-a-chart, .fluency-chart, .package-chart, .n-o-chart ,
+.n-b-search, #fluency, #package {
+    width: 90%;
+}
+
+.n-b-search, #fluency, #package {
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+#fluency .title, #fluency .l-search-action-title, #package .title,  #package .l-search-action-title,
+.n-b-search .l-search-action-title {
+    font-size: 11pt;
+}
+
+.n-b-chart {
+    height: 400px;
+    line-height: 400px;
+    border: 1px solid #d4d4d4;
+    border-radius: 3px;
+    padding: 10px 20px 0 20px;
+}
+
+.n-b-chart_summary {
+    margin: 0 auto;
+    width: 90%;
+    padding: 20px 0;
+}
+
+.n-b-search .l-search-action, #package .l-search-action, #fluency .l-search-action{
+    line-height: 34px;
+    height:34px;
+}
+
+.l-domain-action .l-search-action-title {
+    width: auto;
+    padding-right: 10px;
+}
+
+.domainDropDown {
+    width: 118px;
+}
+
+.domainDropDown .dropdown-menu {
+    width: 400px;
+    padding: 15px 15px;
+}
+
+.domainDropDown input[type="checkbox"]{
+    margin-top: 11px;
+}
+
+.domainDropDown .list-group-item {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    padding: 5px 10px;
+}
+
+.domainDropDown .list-group {
+    margin-bottom: 0;
+}
+
+.domainDropDown .padding {
+    padding: 10px 15px;
+}
+
+.domainDropDown .radio-all {
+    margin-left: 15px;
+}
