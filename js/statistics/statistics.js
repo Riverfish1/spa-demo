@@ -366,183 +366,155 @@
 
         default: {
             nav: '.nav-sidebar',
-            route: 'overview',
-            // routes: {
-            //     'overview': {
-            //         action: function() {
-            //             return this.overview();
-            //         }
-            //     },
-            //     't-a': {
-            //         action: function() {
-            //             return this.terminal('终端访问量', '/s/terminal/ov', {}, true);
-            //         }
-            //     },
-            //     'pc-b': {
-            //         action: function() {
-            //             return this.terminal('浏览器', '/s/terminal/pc/browser');
-            //         }
-            //     },
-            //     'pc-o': {
-            //         action: function() {
-            //             return this.terminal('操作系统', '/s/terminal/pc/os');
-            //         }
-            //     },
-            //     'a-t': {
-            //         action: function() {
-            //             return this.terminal('机型', '/s/terminal/android/device');
-            //         }
-            //     },
-            //     'a-p': {
-            //         action: function() {
-            //             return this.terminal('播放器', '/s/terminal/android/player');
-            //         }
-            //     },
-            //     'a-r': {
-            //         action: function() {
-            //             return this.terminal('分辨率', '/s/terminal/android/resolution');
-            //         }
-            //     },
-            //     'a-o': {
-            //         action: function() {
-            //             return this.terminal('操作系统', '/s/terminal/android/os');
-            //         }
-            //     },
-            //     'ios-t': {
-            //         action: function() {
-            //             return this.terminal('机型', '/s/terminal/ios/device');
-            //         }
-            //     },
-            //     'ios-p': {
-            //         action: function() {
-            //             return this.terminal('播放器', '/s/terminal/ios/player');
-            //         }
-            //     },
-            //     'ios-r': {
-            //         action: function() {
-            //             return this.terminal('分辨率', '/s/terminal/ios/resolution');
-            //         }
-            //     },
-            //     'ios-o': {
-            //         action: function() {
-            //             return this.terminal('操作系统', '/s/terminal/ios/os');
-            //         }
-            //     },
-            //     'h5-r': {
-            //         action: function() {
-            //             return this.terminal('分辨率', '/s/terminal/h5', {
-            //                 factor: 'resolution'
-            //             });
-            //         }
-            //     },
-            //     'h5-o': {
-            //         action: function() {
-            //             return this.terminal('操作系统', '/s/terminal/h5', {
-            //                 factor: 'os'
-            //             });
-            //         }
-            //     },
-            //     'h5-b': {
-            //         action: function() {
-            //             return this.terminal('浏览器', '/s/terminal/h5', {
-            //                 factor: 'browser'
-            //             });
-            //         }
-            //     },
-            //     't-inland': {
-            //         action: function() {
-            //             return this.inland('/s/territory/stats');
-            //         }
-            //     },
-            //     't-national': {
-            //         action: function() {
-            //             return this.national('/s/territory/stats');
-            //         }
-            //     },
-            //     'c-v': {
-            //         action: function() {
-            //             return this.content('视频访问量top10', 'content-video-tpl', '访问量', 1);
-            //         }
-            //     },
-            //     'c-b': {
-            //         action: function() {
-            //             return this.content('视频弹幕发送量top10', 'content-barrage-tpl', '发送量', 0);
-            //         }
-            //     },
-            //
-            //     'u-s': {
-            //         action: function() {
-            //             return this.userSample('/s/user/fs', '/s/user/f', userSample());
-            //         }
-            //     },
-            //
-            //     'u-a': {
-            //         action: function() {
-            //             return this.userAccess();
-            //         }
-            //     },
-            //
-            //     'u-b': {
-            //         action: function() {
-            //             return this.userBarrage('/s/user/b', '用户发送弹幕top10', 'user-barrage-tpl', '弹幕数', userBarrage());
-            //         }
-            //     },
-            //
-            //     'u-f': {
-            //         action: function() {
-            //             return this.userFoundation('/s/user/fs');
-            //         }
-            //     },
-            //     'n-o': {
-            //         action: function() {
-            //             return this.operator();
-            //         }
-            //     },
-            //
-            //     'n-b': {
-            //         action: function() {
-            //             return this.bandWidth();
-            //         }
-            //     },
-            //
-            //     'n-c': {
-            //         action: function() {
-            //             return this.cdn();
-            //         }
-            //     },
-            //
-            //     'n-f': {
-            //         action: function() {
-            //             return this.fluency();
-            //         }
-            //     }
-            // }
+            route: '/overview',
             routes: {
-                '/': function () {
-                    return new Stats.Views.OverviewView();
+                '/overview': {
+                    action: function() {
+                        return this.overview();
+                    }
                 },
-                '/overview': function () {
-                    return new Stats.Views.OverviewView();
+                '/t-a': {
+                    action: function() {
+                        return this.terminal('终端访问量', '/s/terminal/ov', {}, true);
+                    }
                 },
-                '/u-s': function () {
-                    return new Stats.Views.SampleView({
-                        mockedData: getData(userSample())
-                    });
+                '/pc-b': {
+                    action: function() {
+                        return this.terminal('浏览器', '/s/terminal/pc/browser');
+                    }
+                },
+                '/pc-o': {
+                    action: function() {
+                        return this.terminal('操作系统', '/s/terminal/pc/os');
+                    }
+                },
+                '/a-t': {
+                    action: function() {
+                        return this.terminal('机型', '/s/terminal/android/device');
+                    }
+                },
+                '/a-p': {
+                    action: function() {
+                        return this.terminal('播放器', '/s/terminal/android/player');
+                    }
+                },
+                '/a-r': {
+                    action: function() {
+                        return this.terminal('分辨率', '/s/terminal/android/resolution');
+                    }
+                },
+                '/a-o': {
+                    action: function() {
+                        return this.terminal('操作系统', '/s/terminal/android/os');
+                    }
+                },
+                '/ios-t': {
+                    action: function() {
+                        return this.terminal('机型', '/s/terminal/ios/device');
+                    }
+                },
+                '/ios-p': {
+                    action: function() {
+                        return this.terminal('播放器', '/s/terminal/ios/player');
+                    }
+                },
+                '/ios-r': {
+                    action: function() {
+                        return this.terminal('分辨率', '/s/terminal/ios/resolution');
+                    }
+                },
+                '/ios-o': {
+                    action: function() {
+                        return this.terminal('操作系统', '/s/terminal/ios/os');
+                    }
+                },
+                '/h5-r': {
+                    action: function() {
+                        return this.terminal('分辨率', '/s/terminal/h5', {
+                            factor: 'resolution'
+                        });
+                    }
+                },
+                '/h5-o': {
+                    action: function() {
+                        return this.terminal('操作系统', '/s/terminal/h5', {
+                            factor: 'os'
+                        });
+                    }
+                },
+                '/h5-b': {
+                    action: function() {
+                        return this.terminal('浏览器', '/s/terminal/h5', {
+                            factor: 'browser'
+                        });
+                    }
+                },
+                '/t-inland': {
+                    action: function() {
+                        return this.inland('/s/territory/stats');
+                    }
+                },
+                '/t-national': {
+                    action: function() {
+                        return this.national('/s/territory/stats');
+                    }
+                },
+                '/c-v': {
+                    action: function() {
+                        return this.content('视频访问量top10', 'content-video-tpl', '访问量', 1);
+                    }
+                },
+                '/c-b': {
+                    action: function() {
+                        return this.content('视频弹幕发送量top10', 'content-barrage-tpl', '发送量', 0);
+                    }
                 },
 
-                '/u-a': function () {
-                    return new Stats.Views.UserAccessView();
-
+                '/u-s': {
+                    action: function() {
+                        return this.userSample('/s/user/fs', '/s/user/f', userSample());
+                    }
                 },
 
-                '/u-b': function () {
-                    return this.userBarrage('/s/user/b', '用户发送弹幕top10', 'user-barrage-tpl', '弹幕数', userBarrage());
-
+                '/u-a': {
+                    action: function() {
+                        return this.userAccess();
+                    }
                 },
 
-                '/u-f': function () {
-                    return this.userFoundation('/s/user/fs');
+                '/u-b': {
+                    action: function() {
+                        return this.userBarrage('/s/user/b', '用户发送弹幕top10', 'user-barrage-tpl', '弹幕数', userBarrage());
+                    }
+                },
 
+                '/u-f': {
+                    action: function() {
+                        return this.userFoundation('/s/user/fs');
+                    }
+                },
+                '/n-o': {
+                    action: function() {
+                        return this.operator();
+                    }
+                },
+
+                '/n-b': {
+                    action: function() {
+                        return this.bandWidth();
+                    }
+                },
+
+                '/n-c': {
+                    action: function() {
+                        return this.cdn();
+                    }
+                },
+
+                '/n-f': {
+                    action: function() {
+                        return this.fluency();
+                    }
                 }
             }
         },
@@ -550,21 +522,12 @@
         initialize: function () {
             this.initMenu();
             this._view = void 0;
-            var self = this;
-            this.route = new Stats.Route(this.options.routes);
-            // this.changeTo(this.options.route);
+            this.route = new Stats.Route();
+            this.route.on('routeChange', $.proxy(this.changeTo, this));
         },
 
         initMenu: function () {
-            var self = this;
-            $(this.options.nav).menu({
-                // clickHandler: function ($this) {
-                //     var data = $this.data();
-                //     if (!$.isEmptyObject(data)) {
-                //         self.changeTo(data.route);
-                //     }
-                // }
-            });
+            $(this.options.nav).menu();
         },
 
         changeTo: function (route) {

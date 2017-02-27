@@ -2,7 +2,7 @@
 
     function Menu(options) {
         this.root = options.root;
-        this.clickHandler = options.clickHandler;
+        // this.clickHandler = options.clickHandler;
     }
 
     Menu.prototype = {
@@ -12,9 +12,9 @@
             this.root.on('click', "a", function () {
                 var $this = $(this);
                 that.active($this);
-                if (that.clickHandler) {
-                    that.clickHandler($this);
-                }
+                // if (that.clickHandler) {
+                //     that.clickHandler($this);
+                // }
             });
         },
 

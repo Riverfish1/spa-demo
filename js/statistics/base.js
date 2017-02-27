@@ -144,10 +144,7 @@ var Stats = (function () {
         },
         refresh: function() {
             this.currentUrl = location.hash.slice(1) || '/';
-            this.options[this.currentUrl]();
-        },
-        route: function(path,callback){
-            this.options[path] = callback || function(){};
+            this.trigger('routeChange', this.currentUrl);
         }
     })
 
