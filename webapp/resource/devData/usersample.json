@@ -1,0 +1,366 @@
+{
+  "uv": [
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221905,
+      "value": 866
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221906,
+      "value": 824
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221907,
+      "value": 849
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221908,
+      "value": 829
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221909,
+      "value": 826
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221910,
+      "value": 848
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221911,
+      "value": 847
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221912,
+      "value": 862
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221913,
+      "value": 873
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221914,
+      "value": 864
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221915,
+      "value": 886
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221916,
+      "value": 902
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221917,
+      "value": 890
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221918,
+      "value": 907
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221919,
+      "value": 872
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221920,
+      "value": 858
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221921,
+      "value": 864
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221922,
+      "value": 867
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221923,
+      "value": 880
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221924,
+      "value": 869
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221925,
+      "value": 886
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221926,
+      "value": 873
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221927,
+      "value": 864
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221928,
+      "value": 878
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221929,
+      "value": 894
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221930,
+      "value": 894
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221931,
+      "value": 891
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221932,
+      "value": 905
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221933,
+      "value": 896
+    },
+    {
+      "indexName": "uid",
+      "aggrType": "count",
+      "minute": 201608221934,
+      "value": 879
+    }
+  ],
+  "pv": [
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221905,
+    "value": 981
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221906,
+    "value": 872
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221907,
+    "value": 909
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221908,
+    "value": 1055
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221909,
+    "value": 898
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221910,
+    "value": 953
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221911,
+    "value": 981
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221912,
+    "value": 957
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221913,
+    "value": 982
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221914,
+    "value": 1294
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221915,
+    "value": 1003
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221916,
+    "value": 1021
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221917,
+    "value": 935
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221918,
+    "value": 989
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221919,
+    "value": 920
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221920,
+    "value": 891
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221921,
+    "value": 1068
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221922,
+    "value": 1096
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221923,
+    "value": 921
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221924,
+    "value": 1123
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221925,
+    "value": 1178
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221926,
+    "value": 901
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221927,
+    "value": 889
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221928,
+    "value": 987
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221929,
+    "value": 1234
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221930,
+    "value": 927
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221931,
+    "value": 1047
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221932,
+    "value": 1007
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221933,
+    "value": 1119
+  },
+  {
+    "indexName": "uuid",
+    "aggrType": "count",
+    "minute": 201608221934,
+    "value": 992
+  }
+]
+}

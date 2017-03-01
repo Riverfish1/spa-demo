@@ -1,0 +1,182 @@
+[
+  {
+    "ipcnt": 487,
+    "pvcnt": 470,
+    "uvcnt": 427,
+    "common_minute": "201608220841"
+  },
+  {
+    "ipcnt": 453,
+    "pvcnt": 482,
+    "uvcnt": 415,
+    "common_minute": "201608220842"
+  },
+  {
+    "ipcnt": 478,
+    "pvcnt": 504,
+    "uvcnt": 426,
+    "common_minute": "201608220843"
+  },
+  {
+    "ipcnt": 444,
+    "pvcnt": 470,
+    "uvcnt": 407,
+    "common_minute": "201608220844"
+  },
+  {
+    "ipcnt": 461,
+    "pvcnt": 470,
+    "uvcnt": 410,
+    "common_minute": "201608220845"
+  },
+  {
+    "ipcnt": 454,
+    "pvcnt": 440,
+    "uvcnt": 401,
+    "common_minute": "201608220846"
+  },
+  {
+    "ipcnt": 491,
+    "pvcnt": 567,
+    "uvcnt": 441,
+    "common_minute": "201608220847"
+  },
+  {
+    "ipcnt": 458,
+    "pvcnt": 517,
+    "uvcnt": 417,
+    "common_minute": "201608220848"
+  },
+  {
+    "ipcnt": 465,
+    "pvcnt": 487,
+    "uvcnt": 426,
+    "common_minute": "201608220849"
+  },
+  {
+    "ipcnt": 487,
+    "pvcnt": 477,
+    "uvcnt": 430,
+    "common_minute": "201608220850"
+  },
+  {
+    "ipcnt": 494,
+    "pvcnt": 484,
+    "uvcnt": 444,
+    "common_minute": "201608220851"
+  },
+  {
+    "ipcnt": 532,
+    "pvcnt": 521,
+    "uvcnt": 466,
+    "common_minute": "201608220852"
+  },
+  {
+    "ipcnt": 509,
+    "pvcnt": 518,
+    "uvcnt": 452,
+    "common_minute": "201608220853"
+  },
+  {
+    "ipcnt": 523,
+    "pvcnt": 525,
+    "uvcnt": 464,
+    "common_minute": "201608220854"
+  },
+  {
+    "ipcnt": 541,
+    "pvcnt": 541,
+    "uvcnt": 470,
+    "common_minute": "201608220855"
+  },
+  {
+    "ipcnt": 511,
+    "pvcnt": 522,
+    "uvcnt": 470,
+    "common_minute": "201608220856"
+  },
+  {
+    "ipcnt": 567,
+    "pvcnt": 550,
+    "uvcnt": 475,
+    "common_minute": "201608220857"
+  },
+  {
+    "ipcnt": 531,
+    "pvcnt": 520,
+    "uvcnt": 462,
+    "common_minute": "201608220858"
+  },
+  {
+    "ipcnt": 530,
+    "pvcnt": 525,
+    "uvcnt": 472,
+    "common_minute": "201608220859"
+  },
+  {
+    "ipcnt": 516,
+    "pvcnt": 493,
+    "uvcnt": 455,
+    "common_minute": "201608220900"
+  },
+  {
+    "ipcnt": 517,
+    "pvcnt": 515,
+    "uvcnt": 461,
+    "common_minute": "201608220901"
+  },
+  {
+    "ipcnt": 524,
+    "pvcnt": 512,
+    "uvcnt": 474,
+    "common_minute": "201608220902"
+  },
+  {
+    "ipcnt": 523,
+    "pvcnt": 540,
+    "uvcnt": 484,
+    "common_minute": "201608220903"
+  },
+  {
+    "ipcnt": 550,
+    "pvcnt": 541,
+    "uvcnt": 499,
+    "common_minute": "201608220904"
+  },
+  {
+    "ipcnt": 513,
+    "pvcnt": 543,
+    "uvcnt": 469,
+    "common_minute": "201608220905"
+  },
+  {
+    "ipcnt": 520,
+    "pvcnt": 581,
+    "uvcnt": 484,
+    "common_minute": "201608220906"
+  },
+  {
+    "ipcnt": 552,
+    "pvcnt": 561,
+    "uvcnt": 496,
+    "common_minute": "201608220907"
+  },
+  {
+    "ipcnt": 522,
+    "pvcnt": 553,
+    "uvcnt": 482,
+    "common_minute": "201608220908"
+  },
+  {
+    "ipcnt": 533,
+    "pvcnt": 569,
+    "uvcnt": 491,
+    "common_minute": "201608220909"
+  },
+  {
+    "ipcnt": 565,
+    "pvcnt": 566,
+    "uvcnt": 500,
+    "common_minute": "201608220910"
+  }
+]

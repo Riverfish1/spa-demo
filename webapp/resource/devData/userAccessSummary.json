@@ -1,0 +1,22 @@
+{
+    "max": {
+      "maxPV": 182927,
+      "maxUV": 115938,
+      "maxIP": 119903
+    },
+    "yesterday": {
+      "pvCnt": 331603,
+      "ipCnt": 145314,
+      "uvCnt": 139135
+    },
+    "today": {
+      "pvCnt": 41331,
+      "ipCnt": 18739,
+      "uvCnt": 16603
+    },
+    "avg": {
+      "avgIP": 27045,
+      "avgPV": 63605,
+      "avgUV": 25743
+    }
+}

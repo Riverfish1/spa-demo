@@ -1,0 +1,186 @@
+{
+ "20170301": [
+  {
+   "common_hour": "2017030100",
+   "ipcnt": 1,
+   "pvcnt": 3
+  },
+  {
+   "common_hour": "2017030101",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017030102",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017030103",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017030104",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017030105",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017030106",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017030107",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017030108",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017030109",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017030110",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017030111",
+   "ipcnt": 0,
+   "pvcnt": 0
+  }
+ ],
+ "20170228": [
+  {
+   "common_hour": "2017022800",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017022801",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017022802",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017022803",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017022804",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017022805",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017022806",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017022807",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017022808",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017022809",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017022810",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017022811",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017022812",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017022813",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017022814",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017022815",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017022816",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017022817",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017022818",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017022819",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017022820",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017022821",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017022822",
+   "ipcnt": 0,
+   "pvcnt": 0
+  },
+  {
+   "common_hour": "2017022823",
+   "ipcnt": 0,
+   "pvcnt": 0
+  }
+ ]
+}

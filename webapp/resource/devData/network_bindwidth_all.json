@@ -1,0 +1,82 @@
+{
+  "code": 0,
+  "message": null,
+  "result": {
+    "bandwidthDetail": [],
+    "useFlow": [
+      {
+        "dayflow": 3012481021735,
+        "day": "2016-11-07"
+      },
+      {
+        "dayflow": 3211661845418,
+        "day": "2016-11-08"
+      },
+      {
+        "dayflow": 5501799870424,
+        "day": "2016-11-09"
+      },
+      {
+        "dayflow": 1465228057196,
+        "day": "2016-11-10"
+      },
+      {
+        "dayflow": 452214774717,
+        "day": "2016-11-11"
+      },
+      {
+        "dayflow": 248176541018,
+        "day": "2016-11-12"
+      },
+      {
+        "dayflow": 2873456677790,
+        "day": "2016-11-13"
+      }
+    ],
+    "fluency": [],
+    "current": [
+      {
+        "flow": {
+          "unit": "M",
+          "flow": 952543
+        },
+        "bandwidth": {
+          "unit": "M",
+          "time": "201611141255",
+          "bandwidth": 863
+        }
+      }
+    ],
+    "bandwidthMax": [
+      {
+        "day": "20161107",
+        "bandwidth": 1069
+      },
+      {
+        "day": "20161108",
+        "bandwidth": 933
+      },
+      {
+        "day": "20161109",
+        "bandwidth": 856
+      },
+      {
+        "day": "20161110",
+        "bandwidth": 793
+      },
+      {
+        "day": "20161111",
+        "bandwidth": 933
+      },
+      {
+        "day": "20161112",
+        "bandwidth": 856
+      },
+      {
+        "day": "20161113",
+        "bandwidth": 793
+      }
+    ]
+  },
+  "count": null
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "pvcnt": 69671,
+    "browser_br": "chrome 45"
+  },
+  {
+    "pvcnt": 14004,
+    "browser_br": "other"
+  },
+  {
+    "pvcnt": 12973,
+    "browser_br": "chrome 2.0"
+  },
+  {
+    "pvcnt": 9823,
+    "browser_br": "chrome 47"
+  },
+  {
+    "pvcnt": 8670,
+    "browser_br": "chrome 53"
+  },
+  {
+    "pvcnt": 7820,
+    "browser_br": "ie 8"
+  },
+  {
+    "pvcnt": 4986,
+    "browser_br": "chrome 31"
+  },
+  {
+    "pvcnt": 3856,
+    "browser_br": "chrome 50"
+  },
+  {
+    "pvcnt": 2858,
+    "browser_br": "safari 53"
+  },
+  {
+    "pvcnt": 2802,
+    "browser_br": "ie 9"
+  }
+]

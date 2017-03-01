@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>spa demo</title>
+    <!-- Bootstrap -->
+    <link href="../resource/common/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="../resource/common/bootstrap/css/bootstrap-table.css">
+    <link rel="stylesheet" href="../resource/common/daterangepicker/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="../resource/common/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="../resource/common/bootstrap/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../resource/general/css/statistics/dashboard.css">
+    <link rel="stylesheet" href="../resource/general/css/statistics/statistics.css">
+    <!--<link rel="stylesheet" href="../resource/general/css/list/list.css">-->
+
+    <!--[if lt IE 9]>
+    <script src="../resource/common/bootstrap/js/html5shiv.min.js"></script>
+    <script src="../resource/common/bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<script>
+    var APPNAME = '';
+</script>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://www.hongshiyun.net/">
+                <img src="../resource/general/images/v0.0.1/logo_teb.png" alt='当虹云' style="margin-top:-12px;">
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left navbar-left-expand">
+            </ul>
+            <ul class="nav navbar-nav navbar-right  navbar-btn-group">
+                <li>
+                    <div class="btn-group ">
+                        <span class="list_user icon" aria-hidden="true"></span>
+                        <button class="btn btn-default">${account}</button>
+                        <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span
+                            class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#/editUser">个人信息</a></li>
+                            <li><a href="#/change/password">修改密码</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#/logout">安全退出</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<div id="info-success-id" class="alert alert-success alert-custom" style="position:fixed" role="alert">
+</div>
+<div id="info-error-id" class="alert alert-danger alert-custom" style="position:fixed" role="alert"></div>
+
+<div class="shadow"></div>
+
+
+<div class="shadow"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="active">
+                    <span class="icon_homePage icon_com"></span>
+                    <a href="#/list">
+                        <span>首页</span>
+                    </a>
+                </li>
+                <li id="video">
+                    <span class="icon_video icon_com"></span>
+                    <a>
+                        <span>视频管理</span>
+                        <i class="nav-icon"></i>
+                    </a>
+                    <ul class="nav nav-sub">
+                        <li>
+                            <a href="#/video" data-route="u-s">
+                                <span>管理视频</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#/video/category/index" data-route="u-a">
+                                <span>分类管理</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#/template/index" data-route="u-f">
+                                <span>转码参数</span>
+                            </a>
+                        </li>
+                        <!--#if(${vod-vr}==1)-->
+                        <li>
+                            <a href="#/template/VR/index" data-route="u-v">
+                                <span>VR转码参数</span>
+                            </a>
+                        </li>
+                        <!--#end-->
+                        <li>
+                            <a href="#/watermarkTemplate" data-route="u-b">
+                                <span>台标设置</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <!--#if(${live}==1)-->
+                <li id="live">
+                    <span class="icon_live icon_com"></span>
+                    <a>
+                        <span>直播管理</span>
+                        <i class="nav-icon"></i>
+                    </a>
+                    <ul class="nav nav-sub">
+                        <li>
+                            <a href="#/live/index" data-route="c-v">
+                                <span>频道管理</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#/live/template/index" data-route="c-b">
+                                <span>直播编码库</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#/live/category/index" data-route="c-b">
+                                <span>直播分类</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#/live/watermark/index" data-route="c-b">
+                                <span>直播台标</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <!--#end-->
+                <!--#if(${sfp-service-enabled}=="1")-->
+                <li id="sfpVideo">
+                    <span class="icon_sfpVideo icon_com"></span>
+                    <a>
+                        <span>云课堂</span>
+                        <i class="nav-icon"></i>
+                    </a>
+                    <ul class="nav nav-sub">
+                        <li>
+                            <a href="#/sfpVideo">
+                                <span>录课管理</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#/sfpVideo/category/index">
+                                <span>分类管理</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#/sfpVideo/template/index">
+                                <span>转码参数</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <!--#end-->
+                <!--#if(${UGC}=="1")-->
+                <li id="ugcLive">
+                    <span class="icon_ugc icon_com"></span>
+                    <a>
+                        <span>UGC直播</span>
+                        <i class="nav-icon"></i>
+                    </a>
+                    <ul class="nav nav-sub">
+                        <li>
+                            <a href="#/ugc/live" data-route="n-o">
+                                <span>监控系统</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#/ugc/vod" data-route="n-o">
+                                <span>点播管理</span>
+                            </a>
+                        </li>
+                        <!--
+                          <li>
+                            <a href="#/ugc/msgPush" data-route="n-o">
+                                <span>消息推送</span>
+    ##
+                            </a>
+                        </li>
+                         -->
+                    </ul>
+                </li>
+                <!--#end-->
+                <li id="player">
+                    <span class="icon_player icon_com"></span>
+                    <a>
+                        <span>播放器</span>
+                        <i class="nav-icon"></i>
+                    </a>
+                    <ul class="nav nav-sub">
+                        <li>
+                            <a href="#/playSet" data-route="t-a">
+                                <span>点播播放器</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li id="pay">
+                    <span class="icon_pay icon_com"></span>
+                    <a>
+                        <span>费用结算</span>
+                        <i class="nav-icon"></i>
+                    </a>
+                    <ul class="nav nav-sub">
+                        <li>
+                            <a href="#/statistics/spaceData" data-route="n-o">
+                                <span>费用总览</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <!--##        2016-11-15 数据统计 注释-->
+                <li id="bigData">
+                    <span class="icon_stats icon_com"></span>
+                    <a>
+                        <span>数据统计</span>
+                        <i class="nav-icon"></i>
+                    </a>
+                    <ul class="nav nav-sub">
+                        <li class="active">
+                            <a data-route="overview" href="#/overview">
+                                <span>数据统计概览</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#/business">
+                                <span>业务统计</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#/accessStats">
+                                <span>访问统计</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#/network_fluency">
+                                <span>网络分析</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#/terminal">
+                                <span>终端分析</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#/client_query">
+                                <span>客户端查询</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <div  id="right-content"></div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../resource/common/jquery/jquery-2.1.1.min.js"></script>
+<script src="../resource/common/bootstrap/js/bootstrap.js"></script>
+<script src="../resource/common/bootstrap/js/bootstrap-table.js"></script>
+
+<script src="../resource/common/highchart/highcharts.js"></script>
+<script src="../resource/common/highchart/map.js"></script>
+<script src="../resource/common/highchart/cn-all-sar-taiwan.js"></script>
+<script src="../resource/common/momment/moment-with-langs.min.js"></script>
+
+<script src="../resource/common/template/template.js"></script>
+<script src="../resource/common/momment/moment.min.js"></script>
+<script src="../resource/common/daterangepicker/daterangepicker.js"></script>
+
+<script src="../resource/general/js/statistics/menu.js?${RANDOM_VALUE}" type="text/javascript"></script>
+<script src="../resource/general/js/statistics/base.js?${RANDOM_VALUE}" type="text/javascript"></script>
+
+<script src="../resource/general/js/list/list.js?${RANDOM_VALUE}" type="text/javascript"></script>
+
+<script src="../resource/general/js/statistics/overview.js?${RANDOM_VALUE}" type="text/javascript"></script>
+<script src="../resource/general/js/statistics/business.js?${RANDOM_VALUE}" type="text/javascript"></script>
+<script src="../resource/general/js/statistics/client_flash.js?${RANDOM_VALUE}" type="text/javascript"></script>
+<script src="../resource/general/js/statistics/client_query.js?${RANDOM_VALUE}" type="text/javascript"></script>
+<script src="../resource/general/js/statistics/terminal.js?${RANDOM_VALUE}" type="text/javascript"></script>
+<script src="../resource/general/js/statistics/territory.js?${RANDOM_VALUE}" type="text/javascript"></script>
+<script src="../resource/general/js/statistics/content.js?${RANDOM_VALUE}" type="text/javascript"></script>
+<script src="../resource/general/js/statistics/user.js?${RANDOM_VALUE}" type="text/javascript"></script>
+<script src="../resource/general/js/statistics/network.js?${RANDOM_VALUE}" type="text/javascript"></script>
+<script src="../resource/general/js/statistics/accessStats.js?${RANDOM_VALUE}" type="text/javascript"></script>
+<script src="../resource/general/js/statistics/statistics.js?${RANDOM_VALUE}" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+    $(function () {
+        new Stats.App();
+    });
+</script>
+
+<script id="tabs-common" type="text/html">
+    {{if title}}
+    <div class="f16 panel-heading" style="padding-bottom: 25px">{{title}}</div>
+    {{/if}}
+    <div class="tabbable">
+        <ul class="nav nav-tabs" id="tabNav">
+            {{each items as item i}}
+            <li><a href="#" data-value={{i}} data-toggle="tab">{{item}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+    <div class="tab-content" id="tabContent"></div>
+</script>
+
+<script id="list-tpl" type="text/html">
+    <div class="clearfix">
+        <div id="indexBtn">
+            <button type="button" class="btn btn_upload"
+                    onclick="javascript:window.open('#/video/forward/upload' ,'_self')">
+                <i class="icon_upload"></i>上传视频
+            </button>
+        </div>
+        <div id="indexStats">
+            <div id="statsH">
+                <span>数据统计</span>
+                <a href="#/overview"><span class="right">详细数据》</span></a>
+            </div>
+            <div id="statsC">
+                <div>
+                    <div class="col-md-4">
+                        <div class="content video">
+                            <img class="fl" src="../resource/general/images/v0.0.1/index_video.png">
+                            <div class="center">
+                                <span id="video-num"></span>
+                                <br>
+                                <span>视频个数(个)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="content time">
+                            <img class="fl" src="../resource/general/images//v0.0.1/index_clock.png">
+                            <div class="center">
+                                <span id="video-time"></span>
+                                <br>
+                                <span>上传时长(分)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="content playTime">
+                            <img class="fl" style="margin-top: 8px;"
+                                 src="../resource/general/images//v0.0.1/index_play.png">
+                            <div class="center">
+                                <span id="video-playTime"></span>
+                                <br>
+                                <span>播放次数(次)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div id="processTraffic">
+                    <div class="mb15">
+                        本月已用流量：
+                        <span id="usedFlow"></span>
+                    </div>
+                    <div class="progress active" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+                         aria-valuenow="0">
+                        <!--#if(${trial}==1)-->
+                        {{if trial == 1}}
+                        <div class="trail_bg"></div>
+                        {{/if}}
+                        <!--#end-->
+                        <div class="progress-bar progress-bar-success"
+                             style="width:0%;color:red;background-color: #00AEF9;"></div>
+                    </div>
+                    <div class="progressText">
+                        <span>10G</span>
+                        <span>1TB</span>
+                        <span>100TB</span>
+                        <span>1PB</span>
+                    </div>
+                </div>
+                <div id="tabContainer">
+
+                </div>
+                <!--<div id="chart">-->
+                    <!--<div class="tabbable" id="chartTabs">-->
+                        <!--{{if trial == 1}}-->
+                        <!--&lt;!&ndash;#if(${trial}==1)&ndash;&gt;-->
+                        <!--<span class="chartTitle">按7天使用流量</span>-->
+                        <!--{{else}}-->
+                        <!--&lt;!&ndash;#else&ndash;&gt;-->
+                        <!--<ul class="nav nav-tabs" id="chartNav">-->
+                            <!--<li class="active"><a href="#tab1" data-toggle="tab">近7天使用流量</a></li>-->
+                            <!--<li><a href="#tab2" data-toggle="tab">近1个月使用流量</a></li>-->
+                        <!--</ul>-->
+                        <!--{{/if}}-->
+                        <!--&lt;!&ndash;#end&ndash;&gt;-->
+                        <!--<div class="tab-content" id="terminalContent">-->
+                            <!--<div class="tab-pane active" id="tab1">-->
+                                <!--<div id="traffic-7-table">-->
+                                    <!--<span class="text"></span>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="tab-pane" id="tab2">-->
+                                <!--<div id="traffic-30-table">-->
+                                    <!--<span class="text"></span>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div id="processSpace">
+                    <div class="mb15">
+                        已用空间：
+                        <span id="usedSpace"></span>
+                    </div>
+                    <div class="progress active" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+                         aria-valuenow="0">
+                        {{if trial == 1}}
+                        <!--#if(${trial}==1)-->
+                        <div class="trail_bg"></div>
+                        <!--#end-->
+                        {{/if}}
+                        <div class="progress-bar progress-bar-success"></div>
+                    </div>
+                    <div class="progressText">
+                        <span>10G</span>
+                        <span>1TB</span>
+                        <span>100TB</span>
+                        <span>1PB</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="overview-tpl" type="text/html">
+    <div class="panel-heading" id="title">
+        <span class="f16">数据统计概览</span>
+        <span id="description" data-toggle="popover" data-trigger="hover" data-html="true"
+              class="glyphicon glyphicon-question-sign"
+              data-content="<div class='l-description '>
+                  <span class='title'>浏览量（PV）: </span><span class='content'>即Page View, 即视频点击量，用户每次点击即被计算一次</span>
+                  <div class='row-gap'></div>
+                  <span class='title'>访客数（UV）: </span><span class='content'>即Unique Visitor,访问您网站的一台电脑或手机客户端为一个访客。00:00-24:00内相同的客户端只被计算一次</span>
+                  <div class='row-gap'></div>
+                  <span class='title'>IP（独立IP）: </span><span class='content'>即Internet Protocol,指独立IP数。00:00-24:00内相同IP地址只被计算一次。</span>
+              </div>">
+        </span>
+    </div>
+    <div class="panel-body">
+        <div class="row " style="height: 143px;">
+            <table id="summary-table" class="table l-table">
+                <thead>
+                <tr>
+                    <th class="w20pt" data-field="pv">今日访问量</th>
+                    <th class="w20pt" data-field="bindwidth">当前带宽(Mbps)</th>
+                    <th class="w20pt" data-field="flow">累计流量(MB)</th>
+                    <th class="w20pt" data-field="ip">独立ip数</th>
+                    <!--<th class="w20pt" data-field="isnewuser_uid">新增用户</th>-->
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="row overview-main">
+            <div class="col-md-6" id="overview">
+                <div class="panel panel-default mb123">
+                    <div class="panel-heading">用户统计
+                        <a class="fr" href="#/accessStats">详情</a>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row l-charts" id="chart">
+                            <span class="text"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" id="fluencyAndBindWidth">
+                <div class="panel panel-default" style="height: 475px;">
+                    <div class="panel-heading">带宽分析
+                        <a class="fr" href="#/network_bindwidth">详情</a>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row n-b-chart_summary"></div>
+                        <div class="row l-charts" id="fluency-chart">
+                            <span class="text"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row overview-bottom">
+            <div class="col-md-6" id="operator">
+                <div class="panel panel-default mb123">
+                    <div class="panel-heading">运营商统计
+                        <a class="fr" href="#/accessStats?tabIndex=1">详情</a>
+                    </div>
+                    <div class="panel-body">
+                        <div class="l-search hide">
+                            <div class="form-inline">
+                                <div class="form-group">
+                                    <button type="button" id="btn-today" class="btn btn-primary btn-sm active">今天
+                                    </button>
+                                    <button type="button" id="btn-yesterday" class="btn btn-primary btn-sm">昨天</button>
+                                    <button type="button" id="btn-last7days" class="btn btn-primary btn-sm">近七天</button>
+                                    <button type="button" id="btn-last30days" class="btn btn-primary btn-sm">近30天
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row l-charts n-o-chart" id="operator_pie">
+                            <span class="text"></span>
+                        </div>
+                        <!--##                        <div class="l-detail">-->
+                        <!--##                            <table id="video-table" class="table l-table" data-toggle="table">-->
+                        <!--##                                <thead>-->
+                    <!--##                                <tr>-->
+                        <!--##                                    <th class="w20pt" data-field="_id">序号</th>-->
+                        <!--##                                    <th class="w40pt" data-field="item">视频名称</th>-->
+                        <!--##                                    <th class="w20pt" data-field="userCounts" data-sortable="true">浏览量（PV)</th>-->
+                        <!--##                                    &lt;!&ndash;<th class="w20pt" data-field="percent" data-sortable="true">播放完成度</th>&ndash;&gt;-->
+                        <!--##                                </tr>-->
+                    <!--##                                </thead>-->
+                        <!--##                            </table>-->
+                        <!--##                        </div>-->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" id="region">
+                <div class="panel panel-default">
+                    <div class="panel-heading">访客区域统计
+                        <a class="fr" href="#/accessStats?tabIndex=2">详情</a>
+                    </div>
+                    <div class="panel-body">
+                        <div class="l-search">
+                            <div class="form-inline">
+                                <div class="form-group">
+                                    <button type="button" id="btn-today" class="btn btn-primary btn-sm active">今天
+                                    </button>
+                                    <button type="button" id="btn-yesterday" class="btn btn-primary btn-sm">昨天</button>
+                                    <button type="button" id="btn-last7days" class="btn btn-primary btn-sm">近七天</button>
+                                    <button type="button" id="btn-last30days" class="btn btn-primary btn-sm">近30天
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="l-charts overview-region-chart" id="region-chart">
+                            <div class="row l-charts t-chart" style="width: 500px;;">
+                                <div class="col-sm-9" style="padding-left: 65px;">
+                                    <div id="pip-chart" class="t-inland-chart pip">
+                                        <span class="text"></span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3" style="margin-left: -72%;">
+                                    <div id="map-chart" class="t-inland-chart map">
+                                        <span class="text"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<script id="business-tpl" type="text/html">
+    <div class="panel-heading" id="title">
+        <span class="f16">业务统计</span>
+    </div>
+    <div class="panel-body">
+        <div class="row " style="height: 143px;">
+            <table id="summary-table" class="table l-table">
+                <thead>
+                <tr>
+                    <th class="w20pt" data-field="programAmount">点播节目总量</th>
+                    <th class="w20pt" data-field="videoAmount">点播视频总量</th>
+                    <th class="w20pt" data-field="programTimeAmount">节目总时长(h)</th>
+                    <th class="w20pt" data-field="eventAmount">事件直播频道数</th>
+                    <th class="w20pt" data-field="eventLivingAmount">事件直播中频道数</th>
+                    <th class="w20pt" data-field="mobileAmount">移动直播频道数</th>
+                    <th class="w20pt" data-field="mobileLivingAmount">移动直播中频道数</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="row overview-main">
+            <div class="col-md-6" id="overview">
+                <div class="panel panel-default mb123">
+                    <div class="panel-heading">点播总量分析
+                        <!--## <a class="fr" href="#/user">详情</a>-->
+                    </div>
+                    <div class="panel-body">
+                        <div class="row l-charts" id="core-amount-chart">
+                            <span class="text"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" id="fluencyAndBindWidth">
+                <div class="panel panel-default mb123">
+                    <div class="panel-heading">点播总时长分析
+                        <!--## <a class="fr" href="#/user">详情</a>-->
+                    </div>
+                    <div class="panel-body">
+                        <div class="row l-charts" id="core-time-chart">
+                            <span class="text"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row overview-bottom">
+            <div class="col-md-6" id="operator">
+                <div class="panel panel-default mb123">
+                    <div class="panel-heading">事件直播分析
+                        <!--## <a class="fr" href="#/user">详情</a>-->
+                    </div>
+                    <div class="panel-body">
+                        <div class="row l-charts" id="live-event-chart">
+                            <span class="text"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" id="region">
+                <div class="panel panel-default mb123">
+                    <div class="panel-heading">移动直播分析
+                        <!--## <a class="fr" href="#/user">详情</a>-->
+                    </div>
+                    <div class="panel-body">
+                        <div class="row l-charts" id="live-mobile-chart">
+                            <span class="text"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<script id="terminal-tabs-tpl" type="text/html">
+    <div class="panel-heading" id="title">
+        <span class="f16">终端分析</span>
+        <span >(需要使用当虹云播放器)</span>
+    </div>
+    <div class="panel-body">
+        <div class="tabbable">
+            <ul class="nav nav-tabs" id="terminalNav">
+                <li class="active"><a href="#tab1" data-toggle="tab">Android</a></li>
+                <li><a href="#tab2" data-toggle="tab">iOS</a></li>
+                <li><a href="#tab3" data-toggle="tab">Flash</a></li>
+                <li><a href="#tab4" data-toggle="tab">H5</a></li>
+            </ul>
+            <div class="tab-content" id="terminalContent">
+                <div class="tab-pane active" id="tab1">
+                    <div class="device">
+                        {{include 'terminal-tpl'}}
+                    </div>
+                    <div class="os">
+                        {{include 'terminal-tpl'}}
+                    </div>
+
+                    <div class="resolution">
+                        {{include 'terminal-tpl'}}
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab2">
+                    <div class="device">
+                        {{include 'terminal-tpl'}}
+                    </div>
+                    <div class="os">
+                        {{include 'terminal-tpl'}}
+                    </div>
+                    <div class="resolution">
+                        {{include 'terminal-tpl'}}
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab3">
+                    <div class="device">
+                        {{include 'terminal-tpl'}}
+                    </div>
+                    <div class="os">
+                        {{include 'terminal-tpl'}}
+                    </div>
+                    <!--##                <div class="resolution">-->
+                    <!--##                    {{include 'terminal-tpl'}}-->
+                    <!--##                </div>-->
+                </div>
+                <div class="tab-pane" id="tab4">
+                    <div class="device">
+                        {{include 'terminal-tpl'}}
+                    </div>
+                    <div class="os">
+                        {{include 'terminal-tpl'}}
+                    </div>
+                    <!--##                <div class="resolution">-->
+                    <!--##                    {{include 'terminal-tpl'}}-->
+                    <!--##                </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<script id="terminal-tpl" type="text/html">
+    <div class="panel-heading" id="title"></div>
+    <div class="panel-body">
+        <div class="row l-search">
+            <div class="form-inline">
+                <div class="form-group">
+                    <button type="button" id="btn-today" class="btn btn-primary btn-sm">今天</button>
+                    <button type="button" id="btn-yesterday" class="btn btn-primary btn-sm">昨天</button>
+                    <button type="button" id="btn-last7days" class="btn btn-primary btn-sm">近七天</button>
+                    <button type="button" id="btn-thismonth" class="btn btn-primary btn-sm">本月</button>
+                    <button type="button" id="btn-last30days" class="btn btn-primary btn-sm">近30天</button>
+                </div>
+            </div>
+        </div>
+        <div class="row l-charts" id="chart">
+            <span class="text"></span>
+        </div>
+
+        {{if isAccessOverview == false}}
+        <div class="row l-detail">
+            <p class="title">数据明细</p>
+            <div id="data-table-container">
+                <table id="data-table" class="table l-table" data-toggle="table">
+                    <thead>
+                    <tr>
+                        <th class="w20pt" data-field="_id">序号</th>
+                        <th class="w30pt" data-field="item">{{title}}</th>
+                        <th class="w25pt" data-field="userCounts">访问数</th>
+                        <th class="w25pt" data-field="userPercentage">访问数占比</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        {{/if}}
+    </div>
+</script>
+<script id="territory-inland-tpl" type="text/html">
+    <div class="panel-heading" id="inland-title">
+        <span >国内分析</span>
+    </div>
+    <div class="panel-body">
+        <div class="row l-search">
+            <div class="form-inline">
+                <div class="form-group">
+                    <button type="button" id="btn-today" class="btn btn-primary btn-sm">今天</button>
+                    <button type="button" id="btn-yesterday" class="btn btn-primary btn-sm">昨天</button>
+                    <button type="button" id="btn-last7days" class="btn btn-primary btn-sm">近七天</button>
+                    <button type="button" id="btn-thismonth" class="btn btn-primary btn-sm">本月</button>
+                    <button type="button" id="btn-last30days" class="btn btn-primary btn-sm">近30天</button>
+                </div>
+                <div class="l-search-action hide">
+                    <label class="radio-inline">
+                        <input type="radio" name="type" value="1" checked>浏览量（PV）
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="type" value="2">访客数（UV）
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row l-charts t-chart">
+            <div id="map-chart" class="t-inland-chart map">
+                <span class="text"></span>
+            </div>
+            <div id="pip-chart" class="t-inland-chart pip">
+                <span class="text"></span>
+            </div>
+        </div>
+        <div class="row l-detail">
+            <p class="title">数据明细</p>
+            <div id="data-table-container">
+                <table id="data-inland-table" class="table l-table" data-toggle="table" data-pagination="true">
+                    <thead>
+                    <tr>
+                        <th class="w20pt" data-field="_id">序号</th>
+                        <th class="w30pt item-name" data-field="name">省市</th>
+                        <th class="w25pt item-title" data-field="value">浏览量(PV)</th>
+                        <th class="w25pt item-percent" data-field="percent">访问数占比</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="national"></div>
+</script>
+<script id="territory-national-tpl" type="text/html">
+    <div class="panel-heading" id="national-title">
+        <span>国家分析</span>
+    </div>
+    <div class="panel-body">
+        <div class="row l-search">
+            <div class="form-inline">
+                <div class="form-group">
+                    <button type="button" id="btn-today" class="btn btn-primary btn-sm">今天</button>
+                    <button type="button" id="btn-yesterday" class="btn btn-primary btn-sm">昨天</button>
+                    <button type="button" id="btn-last7days" class="btn btn-primary btn-sm">近七天</button>
+                    <button type="button" id="btn-thismonth" class="btn btn-primary btn-sm">本月</button>
+                    <button type="button" id="btn-last30days" class="btn btn-primary btn-sm">近30天</button>
+                </div>
+                <div class="l-search-action hide">
+                    <label class="radio-inline">
+                        <input type="radio" name="type" value="1" checked>浏览量（PV）
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="type" value="2">访客数（UV）
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row l-charts t-national-chart" id="chart">
+            <span class="text"></span>
+        </div>
+        <div class="row l-detail">
+            <p class="title">数据明细</p>
+            <div id="data-table-container">
+                <table id="data-national-table" class="table l-table" data-toggle="table" data-pagination="true">
+                    <thead>
+                    <tr>
+                        <th class="w20pt" data-field="_id">序号</th>
+                        <th class="w30pt item-name" data-field="name">国家</th>
+                        <th class="w25pt item-title" data-field="value">浏览量(PV)</th>
+                        <th class="w25pt item-percent" data-field="percent">访问数占比</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="territory-tpl">
+    <div id="inland">
+        {{include 'territory-inland-tpl'}}
+    </div>
+    <div id="national">
+        {{include 'territory-inland-tpl'}}
+    </div>
+</script>
+<script id="content-video-tpl" type="text/html">
+    <div class="panel-heading" id="title"></div>
+    <div class="panel-body">
+        <div class="row l-search">
+            <div class="form-inline">
+                <div class="form-group">
+                    <button type="button" id="btn-today" class="btn btn-primary btn-sm">今天</button>
+                    <button type="button" id="btn-yesterday" class="btn btn-primary btn-sm">昨天</button>
+                    <button type="button" id="btn-last7days" class="btn btn-primary btn-sm">近七天</button>
+                    <button type="button" id="btn-last30days" class="btn btn-primary btn-sm">近30天</button>
+                </div>
+            </div>
+        </div>
+        <div class="row l-charts content-chart" id="chart">
+            <span class="text"></span>
+        </div>
+        <div class="row l-detail">
+            <p class="title">数据明细</p>
+            <div id="data-table-container">
+                <table id="data-table" class="table l-table" data-toggle="table">
+                    <thead>
+                    <tr>
+                        <th class="w20pt" data-field="_id">序号</th>
+                        <th class="w20pt" data-field="userCounts" data-sortable="true">浏览量（PV)</th>
+                        <th class="w40pt" data-field="item">视频名称</th>
+                        <!--<th class="w20pt" data-field="percent" data-sortable="true">播放完成度</th>-->
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</script>
+<script id="content-barrage-tpl" type="text/html">
+    <div class="panel-heading" id="title"></div>
+    <div class="panel-body">
+        <div class="row l-search">
+            <div class="form-inline">
+                <div class="form-group">
+                    <button type="button" id="btn-today" class="btn btn-primary btn-sm">今天</button>
+                    <button type="button" id="btn-yesterday" class="btn btn-primary btn-sm">昨天</button>
+                    <button type="button" id="btn-last7days" class="btn btn-primary btn-sm">近七天</button>
+                    <button type="button" id="btn-last30days" class="btn btn-primary btn-sm">近30天</button>
+                </div>
+            </div>
+        </div>
+        <div class="row l-charts content-chart" id="chart">
+            <span class="text"></span>
+        </div>
+        <div class="row l-detail">
+            <p class="title">数据明细</p>
+            <div id="data-table-container">
+                <table id="data-table" class="table l-table" data-toggle="table">
+                    <thead>
+                    <tr>
+                        <th class="w20pt" data-field="_id">序号</th>
+                        <th class="w20pt" data-field="barrageNumber" data-sortable="true">弹幕数</th>
+                        <!--<th class="w20pt" data-field="sourceCount">来源人数</th>-->
+                        <th class="w20pt" data-field="videoName" data-sortable="true">视频名称</th>
+                        <!--<th class="w20pt" data-field="percent">播放完成度</th>-->
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="user-barrage-tpl" type="text/html">
+    <div class="panel-heading" id="title"></div>
+    <div class="panel-body">
+        <div class="row l-search">
+            <div class="form-inline">
+                <div class="form-group">
+                    <button type="button" id="btn-today" class="btn btn-primary btn-sm">今天</button>
+                    <button type="button" id="btn-yesterday" class="btn btn-primary btn-sm">昨天</button>
+                    <button type="button" id="btn-last7days" class="btn btn-primary btn-sm">近七天</button>
+                    <button type="button" id="btn-last30days" class="btn btn-primary btn-sm">近30天</button>
+                </div>
+            </div>
+        </div>
+        <div class="row l-charts content-chart" id="chart">
+            <span class="text"></span>
+        </div>
+        <div class="row l-detail">
+            <p class="title">数据明细</p>
+            <div id="data-table-container">
+                <table id="data-table" class="table l-table" data-toggle="table">
+                    <thead>
+                    <tr>
+                        <th class="w20pt" data-field="_id">序号</th>
+                        <th class="w20pt" data-field="value" data-sortable="true">弹幕数</th>
+                        <th class="w20pt" data-field="name">用户ID</th>
+                        <th class="w20pt" data-field="videoCnt" data-sortable="true">观看影片数</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</script>
+<script id="user-foundation-tpl" type="text/html">
+    <div class="panel-heading" id="title">
+        <span>在线用户分析</span>
+        <span id="description" data-toggle="popover" data-trigger="hover" data-html="true"
+              class="glyphicon glyphicon-question-sign"
+              data-content="<div class='l-description '>
+                  <span class='title'>在线用户: </span><span class='content'>统计网站注册用户（有uid）各个时间段的在线人数</span>
+                  <div class='row-gap'></div>
+                  <span class='title'>在线用户占比: </span><span class='content'>在线注册用户/注册用户总数</span>
+              </div>">
+        </span>
+    </div>
+    <div class="panel-body">
+        <div class="row l-search">
+            <div class="form-inline">
+                <div class="form-group">
+                    <button type="button" id="btn-today" class="btn btn-primary btn-sm active">今天</button>
+                    <button type="button" id="btn-last7days" class="btn btn-primary btn-sm">近七天</button>
+                    <button type="button" id="btn-last30days" class="btn btn-primary btn-sm">近30天</button>
+                </div>
+            </div>
+        </div>
+        <div class="row l-charts user-f-chart" id="chart">
+            <span class="text"></span>
+        </div>
+        <div class="row l-search-action text-center" id="chart-compare-action">
+            <div class="form-inline">
+                <label class="radio-inline">对比: </label>
+                <label class="radio-inline">
+                    <input type="radio" name="chart-action" value="-1" checked="checked"> 前一天
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="chart-action" value="-7"> 上周同期
+                </label>
+            </div>
+        </div>
+        <div class="row l-detail">
+            <p class="title">数据明细</p>
+            <table id="summary-table" class="table l-table" data-pagination="true">
+                <thead>
+                <tr>
+                    <th class="w20pt" data-field="_id">序号</th>
+                    <th class="w20pt" data-field="time" data-sortable="true">日期</th>
+                    <th class="w20pt" data-field="activeUserCnt" data-sortable="true">在线用户</th>
+                    <th class="w20pt" data-field="percent">在线用户(占比)</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</script>
+<script id="user-sample-tpl" type="text/html">
+    <div class="panel-heading" id="title">
+        <span>实时抽样</span>
+        <span id="description" data-toggle="popover" data-trigger="hover" data-html="true"
+              class="glyphicon glyphicon-question-sign"
+              data-content="<div class='l-description '>
+                  <span class='title'>浏览量（PV）: </span><span class='content'>即Page View, 即视频点击量，用户每次点击即被计算一次</span>
+                  <div class='row-gap'></div>
+                  <span class='title'>访客数（UV）: </span><span class='content'>即Unique Visitor,访问您网站的一台电脑或手机客户端为一个访客。00:00-24:00内相同的客户端只被计算一次</span>
+              </div>">
+        </span>
+    </div>
+    <div class="panel-body">
+        <div class="row l-search">
+            <p class="title">最近30分钟访问情况</p>
+            <div class="l-search-action hide">
+                <label class="checkbox-inline">
+                    <input type="checkbox" name="type" value="1" checked>浏览量（PV）
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" name="type" value="2">访客数（UV）
+                </label>
+            </div>
+        </div>
+        <div class="row l-charts user-f-chart" id="chart">
+            <span class="text"></span>
+        </div>
+        <!--<div class="row l-detail">-->
+        <!--<p class="title">最近30分钟访客数据明细</p>-->
+        <!--<table id="detail-table" class="table l-table">-->
+        <!--<thead>-->
+        <!--<tr>-->
+        <!--<th data-field="_id">序号</th>-->
+        <!--<th data-field="">访问时间</th>-->
+        <!--<th data-field="">观看影片</th>-->
+        <!--<th >访问者IP</th>-->
+        <!--<th >发送弹幕数</th>-->
+        <!--<th >播放时长</th>-->
+        <!--<th >操作系统</th>-->
+        <!--<th >首包时间</th>-->
+        <!--<th >卡顿时间</th>-->
+        <!--</tr>-->
+        <!--</thead>-->
+        <!--</table>-->
+        <!--</div>-->
+    </div>
+</script>
+<script id="user-access-tpl" type="text/html">
+    <div class="panel-heading" id="title">
+        <span>用户统计</span>
+        <span id="description" data-toggle="popover" data-trigger="hover" data-html="true"
+              class="glyphicon glyphicon-question-sign"
+              data-content="<div class='l-description '>
+                  <span class='title'>浏览量（PV）: </span><span class='content'>即Page View, 即视频点击量，用户每次点击即被计算一次</span>
+                  <div class='row-gap'></div>
+                  <span class='title'>访客数（UV）: </span><span class='content'>即Unique Visitor,访问您网站的一台电脑或手机客户端为一个访客。00:00-24:00内相同的客户端只被计算一次</span>
+                  <div class='row-gap'></div>
+                  <span class='title'>IP（独立IP）: </span><span class='content'>即Internet Protocol,指独立IP数。00:00-24:00内相同IP地址只被计算一次。</span>
+              </div>">
+        </span>
+    </div>
+    <div class="panel-body">
+        <div id="userAccess">
+            <div class="row l-detail overview-detail">
+                <table id="summary-table" class="table l-table">
+                    <thead>
+                    <tr>
+                        <th class="w20pt" data-field="label"></th>
+                        <th class="w20pt" data-field="uuid">浏览量（PV）</th>
+                        <!--##                        <th class="w20pt" data-field="uid">访客数（UV）</th>-->
+                        <th class="w20pt" data-field="ip">IP（独立IP）</th>
+                        <!--<th class="w20pt" data-field="isnewuser_uid">新增用户</th>-->
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="row l-search">
+                <div class="form-inline" id="days-search">
+                    <div class="form-group">
+                        <button type="button" id="btn-today" class="btn btn-primary btn-sm active">今天</button>
+                        <button type="button" id="btn-last7days" class="btn btn-primary btn-sm">近七天</button>
+                        <button type="button" id="btn-thismonth" class="btn btn-primary btn-sm">本月</button>
+                        <button type="button" id="btn-last30days" class="btn btn-primary btn-sm">近30天</button>
+                    </div>
+                </div>
+                <div class="l-search-action" id="field">
+                    <label class="radio-inline">
+                        <input type="radio" name="f-type" value="1" checked>浏览量（PV）
+                    </label>
+                    <label class="radio-inline hide">
+                        <input type="radio" name="f-type" value="2">访客数（UV）
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="f-type" value="3">IP（独立IP）
+                    </label>
+                </div>
+
+                <div class="l-search-action hide" id="terminal">
+                    <label class="radio-inline">
+                        <input type="radio" name="t-type" value="all" checked>全选设备
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="t-type" value="f">flash
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="t-type" value="h">h5
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="t-type" value="i">ios
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="t-type" value="a">android
+                    </label>
+                </div>
+            </div>
+            <div class="row l-charts" id="chart">
+                <span class="text"></span>
+            </div>
+            <div class="row l-search-action text-center" id="chart-compare-action">
+                <div class="form-inline">
+                    <label class="radio-inline">对比: </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="chart-action" value="-1" checked="checked"> 前一天
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="chart-action" value="-7"> 上周同期
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="network-operator-tpl" type="text/html">
+    <div class="panel-heading" id="title"></div>
+    <div class="panel-body">
+        <div class="row l-search">
+            <div class="form-inline">
+                <div class="form-group">
+                    <button type="button" id="btn-today" class="btn btn-primary btn-sm active">今天</button>
+                    <button type="button" id="btn-yesterday" class="btn btn-primary btn-sm">昨天</button>
+                    <button type="button" id="btn-last7days" class="btn btn-primary btn-sm">近七天</button>
+                    <button type="button" id="btn-thismonth" class="btn btn-primary btn-sm">本月</button>
+                    <button type="button" id="btn-last30days" class="btn btn-primary btn-sm">近30天</button>
+                </div>
+            </div>
+        </div>
+        <div class="row l-charts n-o-chart" id="chart">
+            <span class="text"></span>
+        </div>
+
+        <div class="row l-detail">
+            <p class="title">数据明细</p>
+            <div id="data-table-container">
+                <table id="data-table" class="table l-table" data-toggle="table" data-pagination="true">
+                    <thead>
+                    <tr>
+                        <th class="w20pt" data-field="_id">序号</th>
+                        <th class="w30pt" data-field="item">运营商</th>
+                        <th class="w25pt" data-field="userCounts">用户数(PV)</th>
+                        <th class="w25pt" data-field="userPercentage">访问数占比</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</script>
+<script id="network-bandwidth-tpl" type="text/html">
+    <div class="panel-heading" id="title"></div>
+    <div class="panel-body">
+        <div class="row " style="height: 90px;">
+            <table id="bindwidth-table" class="table l-table">
+                <thead>
+                <tr>
+                    <th class="w20pt" data-field="bandwidthMax">当前带宽(Mbps)</th>
+                    <th class="w20pt" data-field="flowSum">累计流量(MB)</th>
+                    <th class="w20pt" data-field="averageBower">
+                        <a href="#/network_fluency">平均首包时间(ms)</a>
+                    </th>
+                    <!--<th class="w20pt" data-field="isnewuser_uid">新增用户</th>-->
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="row n-b-search">
+            <div class="form-inline">
+                <div class="form-group">
+                    <button type="button" id="btn-today" class="btn btn-primary btn-sm active">今天</button>
+                    <button type="button" id="btn-yesterday" class="btn btn-primary btn-sm">昨天</button>
+                    <button type="button" id="btn-last7days" class="btn btn-primary btn-sm">近七天</button>
+                    <button type="button" id="btn-thismonth" class="btn btn-primary btn-sm">本月</button>
+                    <button type="button" id="btn-last30days" class="btn btn-primary btn-sm">近30天</button>
+                </div>
+            </div>
+            <div class="l-search-action l-domain-action" id="domain">
+                <!--##                            <div class="l-search-action-title pull-left"><b>域名</b></div>-->
+                <!--##                <div id="domainDropDown" class="domainDropDown pull-left"></div>-->
+                <div class="l-search-action-title pull-left"><b>带宽类型</b></div>
+                <div id="domainDropDown" class="domainDropDown pull-left">
+                    <select id="type-bindwidth" name="type" class="form-control">
+                        <option value="all">全部带宽</option>
+                        <option value="videoOnDemand">点播</option>
+                        <option value="live">直播</option>
+                        <option value="download">下载</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row n-b-chart_summary"></div>
+        <div class="row l-charts n-b-chart" id="chart">
+            <span class="text"></span>
+        </div>
+
+        <div class="row l-detail hid">
+            <p class="title">数据明细</p>
+            <div id="data-table-container">
+                <table id="data-table" class="table l-table" data-toggle="table" data-pagination="true">
+                    <thead>
+                    <tr>
+                        <th data-field="_id">序号</th>
+                        <th data-field="day">日期</th>
+                        <th data-field="maxBandwdith">峰值带宽</th>
+                        <th data-field="sumFlow">总流量</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</script>
+<script id="network-cdn-tpl" type="text/html">
+    <div class="panel-heading" id="title"></div>
+    <div class="panel-body">
+        <div class="row l-search">
+            <div class="form-inline">
+                <div class="form-group">
+                    <button type="button" id="btn-today" class="btn btn-primary btn-sm active">今天</button>
+                    <button type="button" id="btn-yesterday" class="btn btn-primary btn-sm">昨天</button>
+                    <button type="button" id="btn-last7days" class="btn btn-primary btn-sm">近七天</button>
+                    <button type="button" id="btn-last30days" class="btn btn-primary btn-sm">近30天</button>
+                </div>
+            </div>
+        </div>
+        <div class="row l-charts n-cdn-chart" id="chart">
+            <span class="text"></span>
+        </div>
+        <div class="row l-detail">
+            <p class="title">数据明细</p>
+            <div id="data-table-container">
+                <table id="data-table" class="table l-table" data-toggle="table" data-pagination="true">
+                    <thead>
+                    <tr>
+                        <th data-field="_id">序号</th>
+                        <th data-field="province" class="item-name">省市</th>
+                        <th data-field="allCdnNodeCount" class="item-value" data-sortable="true">总节点数</th>
+                        <th data-field="aliCdnNodeCount" data-sortable="true">阿里节点数</th>
+                        <th data-field="cnkuaiCdnNodeCount" data-sortable="true">快网节点数</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</script>
+<script id="network-fluency-tpl" type="text/html">
+    <div class="panel-heading" id="title">
+        <span class="f16">流畅度分析</span>
+        <span >(需要使用当虹云播放器)</span>
+    </div>
+    <div class="panel-body">
+        <!--##        <div class="row l-search" id="fluency">-->
+        <!--##            <div class="mb10">-->
+        <!--##                <span class="title">卡顿率分析</span>-->
+        <!--##                <span id="description" data-toggle="popover" data-trigger="hover" data-html="true"-->
+                                <!--##                      class="glyphicon glyphicon-question-sign"-->
+                                <!--##                      data-content="<div class='l-description'>卡顿率 = 卡顿人数/所有观看人数 。在时间轴上展示预设时间点的卡顿率分布</div>">-->
+    <!--##                </span>-->
+        <!--##            </div>-->
+        <!--##            <div class="form-inline">-->
+        <!--##                <div class="form-group">-->
+        <!--##                    <button type="button" id="btn-today" class="btn btn-primary btn-sm active">今天</button>-->
+        <!--##                    <button type="button" id="btn-yesterday" class="btn btn-primary btn-sm">昨天</button>-->
+        <!--##                    <button type="button" id="btn-last7days" class="btn btn-primary btn-sm">近七天</button>-->
+        <!--##                    <button type="button" id="btn-thismonth" class="btn btn-primary btn-sm">本月</button>-->
+        <!--##                    <button type="button" id="btn-last30days" class="btn btn-primary btn-sm">近30天</button>-->
+        <!--##                </div>-->
+        <!--##                <div class="l-search-action" id="domain">-->
+        <!--##                    <div class="l-search-action l-domain-action" id="domain">-->
+        <!--##                        <div class="l-search-action-title pull-left"><b>域名</b></div>-->
+        <!--##                        <div id="domainDropDown" class="domainDropDown pull-left"></div>-->
+        <!--##                    </div>-->
+        <!--##                </div>-->
+        <!--##            </div>-->
+        <!--##        </div>-->
+        <!--##        <div class="row l-charts fluency-chart" id="fluencyChart">-->
+        <!--##            <span class="text"></span>-->
+        <!--##        </div>-->
+        <div class="row l-search" id="package">
+            <p class="title">首包时间分析</p>
+            <div class="form-inline">
+                <div class="form-group">
+                    <button type="button" id="btn-today" class="btn btn-primary btn-sm active">今天</button>
+                    <button type="button" id="btn-yesterday" class="btn btn-primary btn-sm">昨天</button>
+                    <button type="button" id="btn-last7days" class="btn btn-primary btn-sm">近七天</button>
+                    <button type="button" id="btn-thismonth" class="btn btn-primary btn-sm">本月</button>
+                    <button type="button" id="btn-last30days" class="btn btn-primary btn-sm">近30天</button>
+                </div>
+                <!--##                <div class="l-search-action" id="domain">-->
+                <!--##                    <div class="l-search-action l-domain-action" id="domain">-->
+                <!--##                        <div class="l-search-action-title pull-left"><b>域名</b></div>-->
+                <!--##                        <div id="domainDropDown" class="domainDropDown pull-left"></div>-->
+                <!--##                    </div>-->
+                <!--##                </div>-->
+            </div>
+        </div>
+        <div class="row l-charts package-chart" id="packageChart">
+            <span class="text"></span>
+        </div>
+    </div>
+</script>
+<script id="domain-checkbox-dropdown-tpl" type="text/html">
+    <div class="input-group">
+        <div class="input-group-btn">
+            <button type="button" id="btn-domain-dropdown" class="btn btn-default dropdown-toggle"
+                    data-toggle="dropdown">
+                <span class="badge" id="domain-counter">12</span>
+                <span class="caret"></span>
+            </button>
+            <div class="dropdown-menu">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="ali-all"> <strong>阿里</strong>
+                        </label>
+                    </li>
+                </ul>
+                <div class="row padding" id="c-ali">
+                    <div class="col-xs-4">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="ali" value="hls2"> hls2
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="ali" value="hls5"> hls5
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="ali" value="hlsf2"> hlsf2
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="ali" value="rtmp2"> rtmp2
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="ali" value="hlslive2"> hlslive2
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="fastweb-all"> <strong>快网</strong>
+                        </label>
+                    </li>
+                </ul>
+                <div class="row padding" id="c-fastweb">
+                    <div class="col-sm-4">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="fastweb" value="hls1"> hls1
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="fastweb" value="hlsf1"> hlsf1
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="fastweb" value="hlslive1"> hlslive1
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="fastweb" value="hls10"> hls10
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="fastweb" value="rtmp1"> rtmp1
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="fastweb" value="rtmp-push"> rtmp-push
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<script id="domain-radio-dropdown-tpl" type="text/html">
+    <div class="input-group">
+        <div class="input-group-btn">
+            <button type="button" id="btn-domain-dropdown" class="btn btn-default dropdown-toggle"
+                    data-toggle="dropdown" aria-expanded="false">
+                <span class="badge" id="domain-counter">12</span>
+                <span class="caret"></span>
+            </button>
+            <div class="dropdown-menu">
+                <div class="row">
+                    <div class="col-xs-12 radio-all">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="domain_{{idx}}" value="_all" checked="checked"> 全选
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <strong>阿里</strong>
+                    </li>
+                </ul>
+                <div class="row padding" id="c-ali">
+                    <div class="col-xs-4">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="domain_{{idx}}" value="hls2"> hls2
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="domain_{{idx}}" value="hls5"> hls5
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="domain_{{idx}}" value="hlsf2"> hlsf2
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="domain_{{idx}}" value="rtmp2"> rtmp2
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="domain_{{idx}}" value="hlslive2"> hlslive2
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <strong>快网</strong>
+                    </li>
+                </ul>
+                <div class="row padding" id="c-fastweb">
+                    <div class="col-sm-4">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="domain_{{idx}}" value="hls1"> hls1
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="domain_{{idx}}" value="hlsf1"> hlsf1
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="domain_{{idx}}" value="hlslive1"> hlslive1
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="domain_{{idx}}" value="hls10"> hls10
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="domain_{{idx}}" value="rtmp1"> rtmp1
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="domain_{{idx}}" value="rtmp-push"> rtmp-push
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<!-- 背靠背相关  start-->
+<script id="tabs-common" type="text/html">
+    {{if title}}
+    <div class="f16 panel-heading" style="padding-bottom: 25px">{{title}}</div>
+    {{/if}}
+    <div class="tabbable">
+        <ul class="nav nav-tabs" id="tabNav">
+            {{each items as item i}}
+            <li><a href="#" data-value={{i}} data-toggle="tab">{{item}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+    <div class="tab-content" id="tabContent"></div>
+</script>
+<script id="client-flash-common-tpl" type="text/html">
+    <div class="common-title">
+        <span class="title">{{fillData.title}}</span>
+    </div>
+    <div class="common-main">
+        <textarea name="{{fillData.name}}" id="{{fillData.id}}" placeholder="{{fillData.placeholder}}" cols="30"
+                  rows="10"></textarea>
+        <div class="tip">{{fillData.tip}}</div>
+    </div>
+    <div class="common-foot">
+        <button id="submit" class="btn btn-default">提交</button>
+        <button id="domainCheck" class="btn btn-default">域名检测</button>
+    </div>
+</script>
+<script id="client-flash-query-tpl" type="text/hmtl">
+    <div class="operator">
+        <input type="text" placeholder="请输入关键字进行检索">
+        <button id='search'>搜索</button>
+    </div>
+    <div id="data-table-container">
+        <table id="data-table" class="table l-table" data-toggle='table'>
+            <thead>
+            <tr>
+                <th class="w20pt" data-field="url">操作内容</th>
+                <th class="w20pt" data-field="time">操作时间</th>
+                <th class="w20pt" data-field="status">状态</th>
+                <th class="w20pt" data-field="progress">进度</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+
+
+</script>
+
+<script id="client-network-bindwidth-tpl" type="text/html">
+    <div id="main" class="container-fluid">
+        <div class="row">
+            <div >
+                <div class="panel-heading">
+                    <span class="f16">域名流量带宽统计</span>
+                </div>
+                <div class="panel-body">
+
+                    <div class="row" id="alert" style="display: none;margin-top: 30px;">
+                        <div class="alert alert-danger text-center center-block" id="alert-text" style="width: 50%"
+                             role="alert"></div>
+                    </div>
+                    <div class="row text-center l-form">
+                        <form class="form-inline" id="query-form">
+                            <div class="form-group">
+                                <label for="domain">域名</label>
+                                <select class="form-control" id="domain">
+                                </select>
+                            </div>
+                            <div class="form-group date-range">
+                                <label for="value">时间段</label>
+                                <div class="input-group" id="date-range">
+                                    <input type="datetime" class="form-control" size="25" id="value" readonly="true">
+                                    <i class="input-group-addon glyphicon glyphicon-calendar fa fa-calendar c-pointer"></i>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="btn-query">统计</button>
+                            <input type="hidden" name="startDate" id="st">
+                            <input type="hidden" name="endDate" id="et">
+                        </form>
+                    </div>
+                    <div class="row n-b-chart_summary"></div>
+                    <div class="row l-charts n-b-chart" id="chart">
+                        <span class="text"></span>
+                    </div>
+                    <!--##                    <div class="row l-chart ">-->
+                    <!--##                        <div id="chart" class="chart"></div>-->
+                    <!--##                    </div>-->
+                    <!--##                    <div class="row chart-footer hidden">-->
+                    <!--##                        <span class="traffic"></span><span class="text">峰值带宽</span>-->
+                    <!--##                        <span class="padding"></span>-->
+                    <!--##                        <span class="max"></span><span class="text">带宽统计</span>-->
+                    <!--##                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "count": 1,
+  "code": 0,
+  "message": "OK",
+  "result": [
+    {
+      "flow": {
+        "unit": "M",
+        "flow": 695692
+      },
+      "bandwidth": {
+        "unit": "M",
+        "time": "201610111055",
+        "bandwidth": 78
+      }
+    }
+  ]
+}

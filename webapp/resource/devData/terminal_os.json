@@ -1,0 +1,34 @@
+[
+  {
+    "common_os_val": "Win 7",
+    "pvcnt": 56104
+  },
+  {
+    "common_os_val": "WinXP",
+    "pvcnt": 43025
+  },
+  {
+    "common_os_val": "WinNT",
+    "pvcnt": 11943
+  },
+  {
+    "common_os_val": "Win 8",
+    "pvcnt": 657
+  },
+  {
+    "common_os_val": "MAC",
+    "pvcnt": 78
+  },
+  {
+    "common_os_val": "Win2003",
+    "pvcnt": 42
+  },
+  {
+    "common_os_val": "unknow os",
+    "pvcnt": 15
+  },
+  {
+    "common_os_val": "Linux",
+    "pvcnt": 14
+  }
+]

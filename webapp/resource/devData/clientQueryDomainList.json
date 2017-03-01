@@ -1,0 +1,38 @@
+{
+  "code": 0,
+  "message": "Success!",
+  "result":  [
+    {
+      "id": "",
+      "pid": 32,
+      "account": "sdh@Arcvideo.com",
+      "userId": "10340",
+      "domainPrefix": "e0uj9s4r",
+      "domainName": "www.baidu.com",
+      "cdn": "AL",
+      "createTime": "2016-11-24 17:14:20",
+      "modifyTime": "2016-11-24 17:21:17",
+      "pageInfo": "",
+      "domainScope": "private",
+      "domainMode": "live",
+      "cdnList": "AL",
+      "b2b": "1"
+    },
+    {
+      "id": "",
+      "pid": 32,
+      "account": "sdh@Arcvideo.com",
+      "userId": "10340",
+      "domainPrefix": "e0uj9s4r",
+      "domainName": "www.tengxun.com",
+      "cdn": "TX",
+      "createTime": "2016-11-24 17:14:20",
+      "modifyTime": "2016-11-24 17:21:17",
+      "pageInfo": "",
+      "domainScope": "private",
+      "domainMode": "live",
+      "cdnList": "TX",
+      "b2b": "1"
+    }
+  ]
+}

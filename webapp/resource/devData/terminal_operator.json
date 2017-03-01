@@ -1,0 +1,42 @@
+[
+  {
+    "pvcnt": 38190,
+    "deviceinfo_os_v": "4.4.4(19)"
+  },
+  {
+    "pvcnt": 16506,
+    "deviceinfo_os_v": "4.4.2(19)"
+  },
+  {
+    "pvcnt": 16459,
+    "deviceinfo_os_v": "5.1(22)"
+  },
+  {
+    "pvcnt": 12754,
+    "deviceinfo_os_v": "5.1.1(22)"
+  },
+  {
+    "pvcnt": 9932,
+    "deviceinfo_os_v": "5.0.2(21)"
+  },
+  {
+    "pvcnt": 8872,
+    "deviceinfo_os_v": "4.2.2(17)"
+  },
+  {
+    "pvcnt": 7643,
+    "deviceinfo_os_v": "4.3(18)"
+  },
+  {
+    "pvcnt": 4064,
+    "deviceinfo_os_v": "6.0.1(23)"
+  },
+  {
+    "pvcnt": 3003,
+    "deviceinfo_os_v": "6.0(23)"
+  },
+  {
+    "pvcnt": 2978,
+    "deviceinfo_os_v": "5.0(21)"
+  }
+]

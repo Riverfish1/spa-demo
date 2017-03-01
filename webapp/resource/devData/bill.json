@@ -1,0 +1,53 @@
+{
+  "result": {
+    "billDay": 2,
+    "feeAmount": "4835500000716595.68",
+    "traffic": {},
+    "transcoding": {
+      "core": {
+        "amount": "100.56",
+        "fee": "100.90",
+        "price": [
+          {
+            "amount": "200.37",
+            "fee": "200.04",
+            "price": "5.09",
+            "range": "640x480-1280x720"
+          },
+          {
+            "amount": "70.23",
+            "fee": "1273.97",
+            "price": "18.14",
+            "range": "1280x720-1920x1080"
+          },
+          {
+            "amount": "12796.96",
+            "fee": "52353.89",
+            "price": "4.09",
+            "range": "0-640x480"
+          }
+        ]
+      },
+      "live": {
+        "amount": "146098.15",
+        "fee": "597541.43",
+        "price": [
+          {
+            "amount": "146098.15",
+            "fee": "597541.43",
+            "price": "4.09",
+            "range": "0"
+          }
+        ]
+      }
+    },
+    "storage": {
+      "amount": "2197.83",
+      "fee": "659.35",
+      "price": "0.3"
+    }
+  },
+  "code": 0,
+  "message": "success",
+  "success": true
+}

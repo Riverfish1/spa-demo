@@ -1,0 +1,18 @@
+[
+  {
+    "pvcnt": 131675,
+    "common_cli": "android"
+  },
+  {
+    "pvcnt": 112183,
+    "common_cli": "flash"
+  },
+  {
+    "pvcnt": 49541,
+    "common_cli": "h5"
+  },
+  {
+    "pvcnt": 6844,
+    "common_cli": "iOS"
+  }
+]

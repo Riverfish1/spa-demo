@@ -1,0 +1,74 @@
+{
+  "aggregations": [
+    {
+      "day": "2016-10-11",
+      "maxBandwdith": 432.63332118988035,
+      "sumFlow": 1778934
+    },
+    {
+      "day": "2016-10-12",
+      "maxBandwdith": 374.05922328948975,
+      "sumFlow": 1678481
+    },
+    {
+      "day": "2016-10-13",
+      "time": null,
+      "sumBandwdith": null,
+      "maxBandwdith": 193.29135795593263,
+      "minBandwdith": null,
+      "avgBandwdith": null,
+      "sumFlow": 795669,
+      "maxFlow": null,
+      "minFlow": null,
+      "avgFlow": null
+    },
+    {
+      "day": "2016-10-14",
+      "time": null,
+      "sumBandwdith": null,
+      "maxBandwdith": 197.35441047668456,
+      "minBandwdith": null,
+      "avgBandwdith": null,
+      "sumFlow": 758205,
+      "maxFlow": null,
+      "minFlow": null,
+      "avgFlow": null
+    },
+    {
+      "day": "2016-10-15",
+      "time": null,
+      "sumBandwdith": null,
+      "maxBandwdith": 122.46174381256104,
+      "minBandwdith": null,
+      "avgBandwdith": null,
+      "sumFlow": 541731,
+      "maxFlow": null,
+      "minFlow": null,
+      "avgFlow": null
+    },
+    {
+      "day": "2016-10-16",
+      "time": null,
+      "sumBandwdith": null,
+      "maxBandwdith": 197.0866482925415,
+      "minBandwdith": null,
+      "avgBandwdith": null,
+      "sumFlow": 961632,
+      "maxFlow": null,
+      "minFlow": null,
+      "avgFlow": null
+    },
+    {
+      "day": "2016-10-17",
+      "time": null,
+      "sumBandwdith": null,
+      "maxBandwdith": 195.6732516860962,
+      "minBandwdith": null,
+      "avgBandwdith": null,
+      "sumFlow": 756381,
+      "maxFlow": null,
+      "minFlow": null,
+      "avgFlow": null
+    }
+  ]
+}

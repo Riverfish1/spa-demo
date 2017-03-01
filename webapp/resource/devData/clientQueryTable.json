@@ -1,0 +1,36 @@
+{
+  "code": 0,
+  "message": "Success!",
+  "result": [
+    {
+      "url": "",
+      "time": "2016-12-05",
+      "status": "0",
+      "progress": "25%"
+    },
+    {
+      "url": "",
+      "time": "2016-12-04",
+      "status": "0",
+      "progress": "25%"
+    },
+    {
+      "url": "",
+      "time": "2016-12-03",
+      "status": "0",
+      "progress": "25%"
+    },
+    {
+      "url": "",
+      "time": "2016-12-02",
+      "status": "0",
+      "progress": "25%"
+    },
+    {
+      "url": "",
+      "time": "2016-12-01",
+      "status": "0",
+      "progress": "25%"
+    }
+  ]
+}

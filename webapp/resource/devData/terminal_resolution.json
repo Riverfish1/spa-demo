@@ -1,0 +1,42 @@
+[
+  {
+    "pvcnt": 49671,
+    "common_res_value": "1280*720"
+  },
+  {
+    "pvcnt": 28645,
+    "common_res_value": "1920*1080"
+  },
+  {
+    "pvcnt": 26607,
+    "common_res_value": "854*480"
+  },
+  {
+    "pvcnt": 12041,
+    "common_res_value": "960*540"
+  },
+  {
+    "pvcnt": 5579,
+    "common_res_value": "800*480"
+  },
+  {
+    "pvcnt": 2006,
+    "common_res_value": "1280*800"
+  },
+  {
+    "pvcnt": 1052,
+    "common_res_value": "2560*1440"
+  },
+  {
+    "pvcnt": 770,
+    "common_res_value": "1024*600"
+  },
+  {
+    "pvcnt": 667,
+    "common_res_value": "1024*768"
+  },
+  {
+    "pvcnt": 647,
+    "common_res_value": "2048*1536"
+  }
+]

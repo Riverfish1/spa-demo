@@ -1,0 +1,44 @@
+[
+  {
+    "common_day": "20160811",
+    "ipcnt": 17818,
+    "pvcnt": 39148,
+    "uvcnt": 15712
+  },
+  {
+    "common_day": "20160812",
+    "ipcnt": 17818,
+    "pvcnt": 39148,
+    "uvcnt": 15712
+  },
+  {
+    "common_day": "20160813",
+    "ipcnt": 17818,
+    "pvcnt": 39148,
+    "uvcnt": 15712
+  },
+  {
+    "common_day": "20160814",
+    "ipcnt": 17818,
+    "pvcnt": 39148,
+    "uvcnt": 15712
+  },
+  {
+    "common_day": "20160815",
+    "ipcnt": 113026,
+    "pvcnt": 251252,
+    "uvcnt": 107862
+  },
+  {
+    "common_day": "20160816",
+    "ipcnt": 155642,
+    "pvcnt": 393495,
+    "uvcnt": 148296
+  },
+  {
+    "common_day": "20160817",
+    "ipcnt": 145314,
+    "pvcnt": 331603,
+    "uvcnt": 139135
+  }
+]

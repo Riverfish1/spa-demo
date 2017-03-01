@@ -1,0 +1,217 @@
+#indexBtn .icon_upload {
+	cursor: pointer;
+	position: absolute;
+	width: 21px;
+	height: 21px;
+	left: 42px;
+	background: url(../../images/v0.0.1/add.png) no-repeat 5px;
+}
+
+#indexBtn .btn_upload {
+	padding-left: 30px;
+	background-color: #1182B2;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;;
+	color: #fff;
+}
+
+#statsH {
+	font-size: 15px;
+	line-height: 40px;
+}
+
+.right {
+	float: right;
+	margin-right: 20px;
+	color: #333;
+}
+
+.pl15 {
+	padding-left: 15px;
+}
+
+.mb15 {
+	margin-bottom: 15px;
+}
+
+.center {
+	text-align: center;
+}
+
+.fl {
+	float: left;
+}
+
+.content .center > span:first-child {
+	/*font-weight:900;*/
+	font-size: 20px;
+}
+
+#statsC .content:before {
+	display: block;
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: -4px;
+	width: 4px;
+	max-width: 4px;
+	overflow: hidden;
+}
+
+#statsC .video:before {
+	background-color: #B8536F;
+}
+
+#statsC .time:before {
+	background-color: #499156;
+}
+
+#statsC .playTime:before {
+	background-color: #DC9C13;
+}
+
+#statsC .content {
+	padding: 20px 30px 30px;
+	background-color: #F7F7F7;
+	position: relative;
+	margin-left: -15px;
+	margin-right: 10px;
+}
+
+@media (min-width: 768px) {
+	.main {
+		padding-right: 0;
+		padding-left: 40px;
+	}
+}
+
+#processTraffic, #processSpace {
+	margin-bottom: 80px;
+	margin-top: 35px;
+	margin-left: -15px;
+}
+
+#usedFlow, #usedSpace {
+	font-weight: 700;
+	color: #00AEF9;
+	font-size: 16px;
+}
+
+#processTraffic .progress {
+	background-color: #dcf3fd;
+	-webkit-box-shadow: inset 0 1px 2px #dcf3fd;
+	box-shadow: inset 0 1px 2px #dcf3fd;
+}
+
+#processTraffic .progress.trial {
+	-webkit-box-shadow: inset 0 1px 2px #dcf3fd;
+	box-shadow: inset 0 1px 2px #dcf3fd;
+}
+
+#processTraffic .progress-bar {
+	width: 0%;
+	background-color: #00AEF9;
+	position: relative;
+	z-index: 10;
+	-webkit-box-shadow: inset 0 1px 2px transparent;
+	box-shadow: inset 0 1px 2px transparent;
+}
+
+#processTraffic .trail_bg {
+	background: url(../images/v0.0.1/useFlow.jpg);
+	height: 20px;
+	width: 36px;
+	position: absolute;
+	z-index: 5;
+	right: 15px;
+}
+
+#processSpace .progress {
+	background-color: #fff0bb;
+	-webkit-box-shadow: inset 0 1px 2px #fff0bb;
+	box-shadow: inset 0 1px 2px #fff0bb;
+}
+
+#processSpace .progress-bar {
+	width: 0%;
+	background-color: #face67;
+	position: relative;
+	z-index: 10;
+	-webkit-box-shadow: inset 0 1px 2px transparent;
+	box-shadow: inset 0 1px 2px transparent;
+}
+#processSpace .trail_bg {
+	background: url(../images/v0.0.1/useSpace.jpg);
+	height: 20px;
+	width: 36px;
+	position: absolute;
+	z-index: 5;
+	right: 15px;
+}
+#processTraffic .progressText > span,
+#processSpace .progressText > span {
+	width: 24%;
+	display: inline-block;
+	text-align: center;
+	font-size: 16px;
+}
+
+/*#traffic-30-table{*/
+/*min-width:500px;*/
+/*}*/
+
+#chart {
+	margin: 0 40px;
+}
+
+#traffic-7-table,#traffic-30-table{
+	padding-top: 15px;
+	height:270px;
+}
+
+#terminalContent .text{
+	position: absolute;
+	left: 50%;
+	padding-top: 100px;
+}
+#chartTabs > ul > li > a {
+	width: 130px;
+	height: 33px;
+	color: #323232;
+	/*background-color: #428bca;*/
+	text-align: center;
+	line-height: 33px;
+	padding: 0;
+	border: 1px solid #E5E5E8;
+	margin-right: 0px;
+}
+
+#chartTabs > ul > li > a:hover {
+	/*background-color: #428bca;*/
+	/*border:1px solid #428bca;*/
+
+}
+
+#chartTabs > ul > li.active > a,
+#chartTabs > ul > li.active > a:hover,
+#chartTabs > ul > li.active > a:focus {
+	color: #3d3d3d;
+	background-color: #fff;
+	/*border:1px solid #e6e6e6;*/
+
+}
+
+#chartTabs > ul > li.active > a {
+	border-bottom-color: transparent;
+	border-top: 3px solid #00aef9;
+	padding-top: -3px;
+}
+
+#tabContent{
+	padding-top: 15px;
+	height: 380px;
+}
+
+
