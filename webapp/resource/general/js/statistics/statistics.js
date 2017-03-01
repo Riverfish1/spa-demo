@@ -575,6 +575,7 @@
         changeTo: function (route) {
             var routeConfig = this.options.routes[route];
             this.ensureView();
+            setSubNav(route.slice(1));
             this._view = (routeConfig.action).apply(this);
         },
 
