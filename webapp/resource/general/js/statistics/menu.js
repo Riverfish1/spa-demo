@@ -54,4 +54,16 @@
 
 }(jQuery));
 
-
+function setSubNav(route) {
+    var $el = $('[ href $=' + route + ']'),
+      $parentLi = $el.parent(),
+      $parentUl = $parentLi.parent(),
+      $grandparent = $parentUl.parent(),
+      $otherSubNav = $('.nav-sidebar').not($parentLi).removeClass('open active').find('.nav-sub');
+    $('.nav-sidebar').find('.active').removeClass('active open');
+    $otherSubNav.not($parentUl).slideUp('slow');
+    $grandparent && $grandparent.addClass('open active');
+    $el.addClass('active');
+    $parentLi.addClass('active');
+    $parentUl.slideDown('slow');
+}
